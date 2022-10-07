@@ -1,0 +1,11 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "Filmade",
+            "database": "${workspaceFolder:FilmadeApp}/Filmade.db"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}

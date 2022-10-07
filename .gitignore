@@ -231,3 +231,4 @@ _Pvt_Extensions
 .fake/
 Filmade.db
 Filmade.db-shm
+Filmade.db-wal

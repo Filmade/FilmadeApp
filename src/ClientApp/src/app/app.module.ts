@@ -10,7 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { LoginPageComponent } from './login-page/login-page.component';
-import { LoginFormComponent } from './login-form/login-form.component';
+
 
 @NgModule({
   declarations: [
@@ -19,8 +19,7 @@ import { LoginFormComponent } from './login-form/login-form.component';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    LoginPageComponent,
-    LoginFormComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

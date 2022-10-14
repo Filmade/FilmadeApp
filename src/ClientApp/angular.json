@@ -1,12 +1,9 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "cli": {
-    "analytics": false
-  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "FIlmade": {
+    "Filmade": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -72,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "FIlmade:build:production"
+              "browserTarget": "Filmade:build:production"
             },
             "development": {
-              "browserTarget": "FIlmade:build:development",
+              "browserTarget": "Filmade:build:development",
               "proxyConfig": "proxy.conf.js"
             }
           },
@@ -84,7 +81,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "FIlmade:build"
+            "browserTarget": "Filmade:build"
           }
         },
         "test": {
@@ -132,5 +129,5 @@
       }
     }
   },
-  "defaultProject": "FIlmade"
+  "defaultProject": "Filmade"
 }

@@ -1,4 +1,4 @@
-namespace FIlmade;
+namespace Filmade;
 
 public class WeatherForecast
 {

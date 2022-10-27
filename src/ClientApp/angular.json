@@ -129,5 +129,8 @@
       }
     }
   },
-  "defaultProject": "Filmade"
+  "defaultProject": "Filmade",
+  "cli": {
+    "analytics": "04dad13a-fba3-40fc-8b5b-400bfb98a703"
+  }
 }

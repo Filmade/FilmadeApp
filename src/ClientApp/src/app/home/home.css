@@ -1,0 +1,46 @@
+main {
+    background: rgb(203, 153, 126);
+    background: linear-gradient(187deg, rgba(203, 153, 126, 1) 0%, rgba(221, 190, 169, 1) 47%, rgba(255, 232, 214, 1) 100%) no-repeat;
+    height: max-content;
+    min-height: 100vh;
+    margin: 0 0 0 0;
+}
+
+#content {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.logo {
+    width: 100px;
+    transition: 4s;
+
+}
+
+.bd-masthead h1 {
+    font-size: 4rem;
+    line-height: 1;
+}
+
+.card-header {
+    background-color: #ffe8d6;
+}
+
+.card-body {
+    background-color: #ddbea9;
+}
+
+
+.postive-benefit {
+    color: forestgreen;
+}
+.negative-benefit {
+    color: red;
+}
+
+
+
+.hidden {
+    transition: 4s;
+    visibility: hidden;
+}

@@ -1,14 +1,139 @@
-<h1>Hello, world!</h1>
-<p>Welcome to your new single-page application, built with:</p>
-<ul>
-  <li><a href='https://get.asp.net/'>ASP.NET Core</a> and <a href='https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx'>C#</a> for cross-platform server-side code</li>
-  <li><a href='https://angular.io/'>Angular</a> and <a href='http://www.typescriptlang.org/'>TypeScript</a> for client-side code</li>
-  <li><a href='http://getbootstrap.com/'>Bootstrap</a> for layout and styling</li>
-</ul>
-<p>To help you get started, we've also set up:</p>
-<ul>
-  <li><strong>Client-side navigation</strong>. For example, click <em>Counter</em> then <em>Back</em> to return here.</li>
-  <li><strong>Angular CLI integration</strong>. In development mode, there's no need to run <code>ng serve</code>. It runs in the background automatically, so your client-side resources are dynamically built on demand and the page refreshes when you modify any file.</li>
-  <li><strong>Efficient production builds</strong>. In production mode, development-time features are disabled, and your <code>dotnet publish</code> configuration automatically invokes <code>ng build</code> to produce minified, ahead-of-time compiled JavaScript files.</li>
-</ul>
-<p>The <code>ClientApp</code> subdirectory is a standard Angular CLI application. If you open a command prompt in that directory, you can run any <code>ng</code> command (e.g., <code>ng test</code>), or use <code>npm</code> to install extra packages into it.</p>
+<app-nav-menu></app-nav-menu>
+
+<main>
+  <div id="content" class="bd-masthead mb-3 mt-5">
+    <div class="container-xxl bd-gutter">
+      <div class="col-md-6 mx-auto text-center">
+        <img class="logo hidden mb-4 mt-5" src="../assets/Film_login_page.svg" />
+        <h1 class="mb-3 fw-semibold">Manage your films with Filmade</h1>
+        <p class="lead  mb-4 ">
+          Powerful and opensource tool for editing scripts, making breakdowns and managing your team
+        </p>
+      </div>
+    </div>
+    <div class="container-xxl masthead-followup mt-5">
+      <section class="col-lg-7 mx-auto pb-3 mb-3 mb-md-5" id="about">
+        <div class="masthead-followup-icon d-inline-block mb-3">
+          <img src="../assets/PaperWithPancil.png" style="width: 64px;">
+        </div>
+        <h2  class="display-5 mb-3 fw-semibold lh-sm">Easy to use for everyone</h2>
+        <p class="lead fw-normal">
+          Filmade has a user friendly interface designed for the producting work. Or if you don't like our default
+          desing, change it in your settings
+        </p>
+      </section>
+      <section class="col-lg-7 mx-auto pb-3 mb-3 mb-md-5" id="benefits">
+        <div class="masthead-followup-icon d-inline-block mb-3">
+          <img src="../assets/ArrowUp.png" style="width: 64px;">
+        </div>
+        <h2 class="display-5 mb-3 fw-semibold lh-sm">Production increases after using Filmade</h2>
+        <div class="lead fw-normal">
+          <div class="table-responsive">
+          <table class="table table-striped table-sm">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Without Filmade</th>
+                <th scope="col">Filmade Free</th>
+                <th scope="col">Filmade Enterprise</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Total prod time</td>
+                <td><span class="negative-benefit">0%</span></td>
+                <td>up to <span class="postive-benefit">-20%</span></td>
+                <td>up to <span class="postive-benefit">-40%</span></td>
+              </tr>
+              <tr>
+                <td>Total Income</td>
+                <td><span class="negative-benefit">0%</span></td>
+                <td>up to <span class="postive-benefit">+30%</span></td>
+                <td>up to <span class="postive-benefit">+50%</span></td>
+              </tr>
+              <tr>
+                <td>Happy emotions</td>
+                <td><span class="negative-benefit">0%</span></td>
+                <td>up to <span class="postive-benefit">+90%</span></td>
+                <td>up to <span class="postive-benefit">+150%</span></td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+        </div>
+      </section>
+      <section class="col-lg-7 mx-auto pb-3 mb-3 mb-md-5" id="source-code">
+        <div class="masthead-followup-icon d-inline-block mb-3">
+          <img src="../assets/GitHub-Mark-64px.png">
+        </div>
+        <h2 class="display-5 mb-3 fw-semibold lh-sm">Open for everyone</h2>
+        <p class="lead fw-normal">
+          Filmade is an opensource project that uses MIT license. It means that anyone can help us to develop the
+          project. Source code is availbale <a target="_blank" href="https://github.com/Filmade/FilmadeApp">here</a>.
+        </p>
+      </section>
+      <div class="col-lg-7 mx-auto pb-3 mb-3 mb-md-5 text-md-center" id="pricing">
+        <h2 class="display-5 mb-3 fw-semibold lh-sm">Get started now for free</h2>
+        <p class="lead mb-4">
+          We have a plans for any type of teams
+        </p>
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Free</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">$0<small class="text-muted fw-light">/mo</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>1 user pre organization</li>
+                  <li>100 MB of storag</li>
+                  <li>Email support</li>
+                  <li>Help center access</li>
+                </ul>
+                <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Pro</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">$5<small class="text-muted fw-light">/mo</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Up to 10 users</li>
+                  <li>1 GB of storage</li>
+                  <li>Priority email support</li>
+                  <li>Help center access</li>
+                </ul>
+                <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm border-primary">
+              <div class="card-header py-3 text-bg-primary border-primary">
+                <h4 class="my-0 fw-normal">Enterprise</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">$9<small class="text-muted fw-light">/mo</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Unlimites users</li>
+                  <li>15 GB of storage</li>
+                  <li>Phone and email support</li>
+                  <li>Help center access</li>
+                </ul>
+                <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</main>

@@ -2,12 +2,19 @@ a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
-
+  padding-top: 0px;
+  
 }
-
+nav{
+  background-color: rgb(55, 55, 55)!important;
+}
 
 
 .box-shadow {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
-
+.nav-link{
+  color: #C7A44B!important;
+  font-size: 15px!important;
+  font-weight: 500!important;
+}

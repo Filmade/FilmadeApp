@@ -8,6 +8,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatRippleModule } from '@angular/material/core';
 
 
 import { ProjectComponent } from './project/project.component';
@@ -34,6 +35,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     MatButtonModule,
     MatSidenavModule,
     MatToolbarModule,
+    MatRippleModule,
     RouterModule.forChild([
       { path: 'overview', component: OverviewComponent },
       { path: 'company/:cid/project/:pid', component: ProjectComponent },

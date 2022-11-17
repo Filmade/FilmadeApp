@@ -1,22 +1,22 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import * as $ from 'jquery';
 
 
 declare interface RouteInfo {
-    path: string;
-    title: string;
-    icon: string;
-    class: string;
+  path: string;
+  title: string;
+  icon: string;
+  class: string;
 }
-export const ROUTES: RouteInfo[] = [
-    { path: '/dashboard', title: 'Dashboard',  icon: 'dashboard', class: '' },
-    { path: '/user-profile', title: 'User Profile',  icon:'person', class: '' },
-    { path: '/table-list', title: 'Table List',  icon:'content_paste', class: '' },
-    { path: '/typography', title: 'Typography',  icon:'library_books', class: '' },
-    { path: '/icons', title: 'Icons',  icon:'bubble_chart', class: '' },
-    { path: '/maps', title: 'Maps',  icon:'location_on', class: '' },
-    { path: '/notifications', title: 'Notifications',  icon:'notifications', class: '' },
-    { path: '/upgrade', title: 'Upgrade to PRO',  icon:'unarchive', class: 'active-pro' },
+export const OverviewRoutes: RouteInfo[] = [
+  { path: '/workbench/overview', title: 'Overview', icon: 'dashboard', class: '' },
+  { path: '/notifications', title: 'Notifications', icon: 'notifications', class: '' }
+];
+
+export const ProjectRoutes: RouteInfo[] = [
+  { path: '/workbench/company/{cid}/project/{pid}', title: 'Overview', icon: 'dashboard', class: '' },
+  { path: '/workbench/company/{cid}/project/{pid}', title: 'Scripts', icon: 'description', class: '' }
 ];
 
 @Component({
@@ -27,15 +27,28 @@ export const ROUTES: RouteInfo[] = [
 export class SidebarComponent implements OnInit {
   menuItems?: any[];
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
-    this.menuItems = ROUTES.filter(menuItem => menuItem);
+    this.menuItems = OverviewRoutes.filter(menuItem => menuItem);
   }
   isMobileMenu() {
-      if ($(window)?.width() ?? 0 > 991) {
-          return false;
-      }
-      return true;
+    if ($(window)?.width() ?? 0 > 991) {
+      return false;
+    }
+    return true;
   };
+
+  getNavRoutes() {
+    if (this.router.url.startsWith("/workbench/overview"))
+      return OverviewRoutes;
+
+    if (this.router.url.startsWith("/workbench/company") && this.router.url.includes("project"))
+      return ProjectRoutes;
+
+    return ProjectRoutes;
+  }
+
+
+
 }

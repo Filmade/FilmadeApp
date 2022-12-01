@@ -1,1 +1,14 @@
-aaa
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+
+
+            <mat-form-field appearance="fill">
+                <mat-quill (onFocus)="focus($event)"
+                    (onEditorChanged)="changedEditor($event)" (onBlur)="blur($event)"
+                    (onEditorCreated)="created($event)"></mat-quill>
+            </mat-form-field>
+
+        </div>
+    </div>
+</div>

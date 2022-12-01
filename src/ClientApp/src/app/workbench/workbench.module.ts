@@ -15,6 +15,9 @@ import { ProjectComponent } from './project/project.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 
+import { QuillModule } from 'ngx-quill';
+import { MatQuillModule } from './mat-quill/mat-quill-module';
+import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
 
 
 @NgModule({
@@ -30,15 +33,18 @@ import { SidebarComponent } from './sidebar/sidebar.component';
   ],
   imports: [  
     CommonModule,
+    MatQuillModule,
     MatIconModule,
     MatCardModule,
+    MatFormFieldModule,
     MatButtonModule,
     MatSidenavModule,
     MatToolbarModule,
     MatRippleModule,
+    QuillModule.forRoot(),
     RouterModule.forChild([
       { path: 'overview', component: OverviewComponent },
-      { path: 'company/:cid/project/:pid', component: ProjectComponent },
+      { path: 'company/project/:cid/:pid', component: ProjectComponent },
 
     ])
   ]

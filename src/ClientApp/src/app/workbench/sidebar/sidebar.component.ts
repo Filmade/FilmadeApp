@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, ChildActivationStart, NavigationEnd, NavigationStart, Router, RoutesRecognized } from '@angular/router';
 import * as $ from 'jquery';
+import * as path from 'path';
+import { title } from 'process';
 
 
 declare interface RouteInfo {
@@ -25,13 +27,50 @@ export const ProjectRoutes: RouteInfo[] = [
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
-  menuItems?: any[];
+  navRoutes?: RouteInfo[];
 
-  constructor(private router: Router) { }
+  companyId?: string;
+  projectiD?: string;
+
+  constructor(private router: Router) {
+
+  }
 
   ngOnInit() {
-    this.menuItems = OverviewRoutes.filter(menuItem => menuItem);
+    this.navRoutes = OverviewRoutes;
+
+    this.router.events.subscribe(event => {
+
+
+      // if (event instanceof NavigationStart) {
+        
+        
+      //   this.companyId = event.snapshot.params["cid"];
+      //   this.projectiD = event.snapshot.params["pid"];
+
+      //   console.log(this.router.url);
+
+
+      //   if (this.router.url.startsWith("/workbench/company/project")) {
+      //     this.navRoutes = this.finalizeRouteProjects();
+      //     console.log("aa");
+      //   }
+
+      //   else if (this.router.url.startsWith("/workbench/overview")) {
+      //     this.navRoutes = OverviewRoutes;
+      //     console.log("aa11");
+      //   }
+      // }
+
+
+    });
   }
+
+
+
+
+
+
   isMobileMenu() {
     if ($(window)?.width() ?? 0 > 991) {
       return false;
@@ -39,14 +78,9 @@ export class SidebarComponent implements OnInit {
     return true;
   };
 
-  getNavRoutes() {
-    if (this.router.url.startsWith("/workbench/overview"))
-      return OverviewRoutes;
 
-    if (this.router.url.startsWith("/workbench/company") && this.router.url.includes("project"))
-      return ProjectRoutes;
-
-    return ProjectRoutes;
+  private finalizeRouteProjects() {
+    return ProjectRoutes.map(x => ({ class: x.class, icon: x.icon, path: x.path.replace("{cid}", this.companyId!), title: x.title } as RouteInfo));
   }
 
 

@@ -14,6 +14,6 @@ export class OverviewComponent implements OnInit {
   }
 
   openProject(projectId : string, companyId : string) {
-    this.router.navigate([`workbench/company/${companyId}/project/${projectId}`]);
+    this.router.navigate([`workbench/company/project/`, companyId, projectId]);
   }
 }

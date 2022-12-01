@@ -1,9 +1,9 @@
 :host{
-  top: 3rem;
+  top: 2rem;
   position: fixed;
   z-index: 10;
-  width: 80%;
-  margin-left: 8%;
+  width: 100%;
+
 }
 a.navbar-brand {
   white-space: normal;
@@ -11,7 +11,11 @@ a.navbar-brand {
   word-break: break-all;
   padding-top: 0px;
 }
-
+header {
+  width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+}
 
 
 .box-shadow {
@@ -24,6 +28,6 @@ a.navbar-brand {
 }
 .navbar{
   margin-bottom: 0; 
-   border-radius: 50px !important;
-
+  border-radius: 35px !important;
+  background-color: rgb(46, 46, 46) !important;
 }

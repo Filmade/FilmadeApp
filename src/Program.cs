@@ -1,47 +1,77 @@
-using Microsoft.AspNetCore.Authentication;
+using Filmade.Databse;
+using Filmade.Entites.Models;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.EntityFrameworkCore;
-using Filmade.Data;
-using Filmade.Models;
+using Filmade;
+using Filmade.Services;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlite(connectionString));
-
-
-builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<ApplicationDbContext>();
-
-builder.Services.AddIdentityServer()
-    .AddApiAuthorization<ApplicationUser, ApplicationDbContext>();
-
-builder.Services.AddAuthentication()
-    .AddIdentityServerJwt();
+builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddControllersWithViews();
-builder.Services.AddRazorPages();
+builder.Services.AddDbContext<IdentityDbContext>(x => x.UseSqlite(builder.Configuration.GetConnectionString("AppConnectionString")));
+builder.Services.AddAutoMapper(typeof(Program));
+
+builder.Services.AddScoped<JwtHandler>();
+builder.Services.AddScoped<CompanyManager>();
+
+builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
+{
+    options.Password.RequiredLength = 5;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequireDigit = true;
+
+    options.User.RequireUniqueEmail = true;
+
+    options.ClaimsIdentity.UserIdClaimType = "UserId";
+})
+.AddEntityFrameworkStores<IdentityDbContext>();
+
+var jwtSettings = builder.Configuration.GetSection("JwtSettings");
 
 
-if(builder.Environment.IsDevelopment()) {
-    builder.Services.AddDatabaseDeveloperPageExceptionFilter();
-}
-
-
+builder.Services.AddAuthentication(opt =>
+{
+    opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = jwtSettings["validIssuer"],
+        ValidAudience = jwtSettings["validAudience"],
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8
+            .GetBytes(jwtSettings.GetSection("securityKey").Value))
+    };
+});
 
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+
+var _dbContext = (new DbContextOptionsBuilder<IdentityDbContext>().UseSqlite(builder.Configuration.GetConnectionString("AppConnectionString"))).Options;
+
+using (var dbContext = new IdentityDbContext(_dbContext))
 {
-    app.UseMigrationsEndPoint();
-    app.UseDeveloperExceptionPage();
+    if (dbContext.Database.EnsureCreated())
+        app.Logger.LogInformation("Fresh start. Creating db tables ...");
 }
-else
+
+
+
+// Configure the HTTP request pipeline.
+if (!app.Environment.IsDevelopment())
 {
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
@@ -52,14 +82,12 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthentication();
-app.UseIdentityServer();
 app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller}/{action=Index}/{id?}");
-app.MapRazorPages();
 
-app.MapFallbackToFile("index.html");;
+app.MapFallbackToFile("index.html"); ;
 
 app.Run();

@@ -5,6 +5,12 @@
             "driver": "SQLite",
             "name": "Filmade",
             "database": "${workspaceFolder:FilmadeApp}/Filmade.db"
+        },
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "Bruh",
+            "database": "${workspaceFolder:FilmadeApp}/src/Filmade.db"
         }
     ],
     "sqltools.useNodeRuntime": true

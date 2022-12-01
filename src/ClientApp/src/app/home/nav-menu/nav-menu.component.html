@@ -3,7 +3,9 @@
     class="navbar navbar-expand-sm navbar-toggleable-sm box-shadow"
   >
     <div class="container">
-      <a class="navbar-brand" [routerLink]="['/']">Filmade Blog</a>
+      <a class="navbar-brand" [routerLink]="['/']">
+        <img style="width: 240px; " src="../assets/Filmade.png" alt="">
+      </a>
       <button
         class="navbar-toggler"
         type="button"
@@ -16,7 +18,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div
-        class="navbar-collapse collapse d-sm-inline-flex justify-content-end"
+        class="navbar-collapse collapse d-sm-inline-flex justify-content-end" 
         [ngClass]="{ show: isExpanded }"
       >
         <ul class="navbar-nav flex-grow">
@@ -25,21 +27,21 @@
             [routerLinkActive]="['link-active']"
             [routerLinkActiveOptions]="{ exact: true }"
           >
-            <a class="nav-link text-dark" [routerLink]="['/']">Home</a>
+            <a class="nav-link text-light" [routerLink]="['/']">Home</a>
           </li>
           
           <li *ngIf="isLoggedIn" class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/auth/login']"
+            <a class="nav-link text-light" [routerLink]="['/auth/login']"
               >Login</a
             >
           </li>
           <li *ngIf="isLoggedIn" class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/auth/register']"
+            <a class="nav-link text-light" [routerLink]="['/auth/register']"
               >Register</a
             >
           </li>
           <li *ngIf="!isLoggedIn" class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark"  [routerLink]="['/home']"
+            <a class="nav-link text-light"  [routerLink]="['/home']"
               >Logout</a
             >
           </li>

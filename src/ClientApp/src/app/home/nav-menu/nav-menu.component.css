@@ -1,13 +1,17 @@
+:host{
+  top: 3rem;
+  position: fixed;
+  z-index: 10;
+  width: 80%;
+  margin-left: 8%;
+}
 a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
   padding-top: 0px;
-  
 }
-nav{
-  background-color: rgb(55, 55, 55)!important;
-}
+
 
 
 .box-shadow {
@@ -17,4 +21,9 @@ nav{
   color: #C7A44B!important;
   font-size: 15px!important;
   font-weight: 500!important;
+}
+.navbar{
+  margin-bottom: 0; 
+   border-radius: 50px !important;
+
 }

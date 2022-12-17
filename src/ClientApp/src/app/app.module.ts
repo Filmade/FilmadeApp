@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WorkbenchLayoutComponent } from './workbench/workbench-layout/workbench-layout.component';
 import { WorkbenchModule } from './workbench/workbench.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { WorkbenchModule } from './workbench/workbench.module';
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     MatIconModule,
     WorkbenchModule,
     RouterModule.forRoot([

@@ -1,54 +1,16 @@
-<div class="card">
-    <div class="card-body">
-        <h1 class="card-title">Register</h1>
-        <form [formGroup]="registerForm" autocomplete="off" novalidate (ngSubmit)="registerUser(registerForm.value)">
-            <div class="mb-3 row">
-                <label for="firstName" class="col-form-label col-sm-2">First Name:</label>
-                <div class="col-md-5">
-                    <input type="text" id="firstName" formControlName="firstName" class="form-control" />
-                </div>
-            </div>
-            <div class="mb-3 row">
-                <label for="lastName" class="col-form-label col-sm-2">Last Name:</label>
-                <div class="col-md-5">
-                    <input type="text" id="lastName" formControlName="lastName" class="form-control" />
-                </div>
-            </div>
-            <div class="mb-3 row">
-                <label for="email" class="col-form-label col-sm-2">Email:</label>
-                <div class="col-md-5">
-                    <input type="email" id="email" formControlName="email" class="form-control" />
-                </div>
-                <div class="col-md-5">
-                    <em *ngIf="validateControl('email') && hasError('email', 'email')">Please provide a valid email</em>
-                    <em *ngIf="validateControl('email') && hasError('email', 'required')">Email is required</em>
-                </div>
-            </div>
-            <div class="mb-3 row">
-                <label for="password" class="col-form-label col-sm-2">Password:</label>
-                <div class="col-md-5">
-                    <input type="password" id="password" formControlName="password" class="form-control" />
-                </div>
-                <div class="col-md-5">
-                    <em *ngIf="validateControl('password') && hasError('password', 'required')">Password is required</em>
-                </div>
-            </div>
-            <div class="mb-3 row">
-                <label for="confirm" class="col-form-label col-sm-2">Confirm Password:</label>
-                <div class="col-md-5">
-                    <input type="password" id="confirm" formControlName="confirm" class="form-control" />
-                </div>
-                <div class="col-md-5">
-                    <em *ngIf="validateControl('confirm') && hasError('confirm', 'required')">Confirmation is required</em>
-                    <em *ngIf="hasError('confirm', 'mustMatch')">Passwords must match</em>
-                </div>
-            </div>
-            <br>
-            <div class="mb-3 row">
-                <div class="col-md-1">          
-                    <button type="submit" class="btn btn-info" [disabled]="!registerForm.valid">Register</button>
-                </div>
-            </div>
-        </form>
+<app-nav-menu class=""></app-nav-menu>
+<div class="px-4 pt-5 my-5 text-center border-bottom">
+    <h1 class="display-4 fw-bold">Centered screenshot</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+        <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3">Primary button</button>
+        <button type="button" class="btn btn-outline-secondary btn-lg px-4">Secondary</button>
+      </div>
+    </div>
+    <div class="overflow-hidden" style="max-height: 30vh;">
+      <div class="container px-5">
+        <img src="bootstrap-docs.png" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500" loading="lazy">
+      </div>
     </div>
   </div>

@@ -1,10 +1,10 @@
-:host{
-  top: 2rem;
-  position: fixed;
+ :host{
+  margin: 2rem;
   z-index: 10;
   width: 100%;
-
+  
 }
+
 a.navbar-brand {
   white-space: normal;
   text-align: center;
@@ -25,7 +25,7 @@ header {
   color: #C7A44B!important;
   font-size: 15px!important;
   font-weight: 500!important;
-}
+} 
 .navbar{
   margin-bottom: 0; 
   border-radius: 35px !important;

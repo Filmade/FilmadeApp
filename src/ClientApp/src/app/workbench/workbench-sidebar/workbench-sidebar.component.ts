@@ -23,8 +23,8 @@ export const ProjectRoutes: RouteInfo[] = [
 
 @Component({
   selector: 'app-workbench-sidebar',
-  templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.css']
+  templateUrl: './workbench-sidebar.component.html',
+  styleUrls: ['./workbench-sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
   navRoutes?: RouteInfo[];

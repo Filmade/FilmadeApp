@@ -1,0 +1,27 @@
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="breakdown-paper">
+                <div >
+                    <div *ngFor="let group of breakDowns; let i = index">
+                        <span *ngIf="group"> {{ textAsArray[i] }} - {{ group }} </span> 
+                    </div>
+                </div>
+            </div>
+            <div class="paper">
+                <div id="bar" [style.left]="barLeft + 'px'" [style.visibility]="barIsVisible ? 'visible' : 'hidden'"
+                    [style.top]="barTop + 'px'">
+                    <h2>{{activeWord}}</h2>
+                    <br />
+                    <mat-radio-group (change)="handleChange($event)" aria-labelledby="example-radio-group-label" class="example-radio-group"
+                        [(ngModel)]="selectedType">
+                        <mat-radio-button class="example-radio-button" *ngFor="let season of breakDownTypes" [value]="season">
+                            {{season}}
+                        </mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <span *ngFor="let word of textAsArray; let i = index" (click)="openBar($event, i)"> {{ word }} </span>
+            </div>
+        </div>
+    </div>
+</div>

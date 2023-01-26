@@ -1,0 +1,41 @@
+@import '~quill/dist/quill.bubble.css';
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+
+
+
+#quill {
+    width: fit-content;
+    margin-inline: auto;
+}
+
+#editor ::ng-deep  {
+    margin: auto;
+    min-height: 1000px;
+    width: 900px;
+    background-color: aliceblue;
+    border: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20pt !important;
+
+    padding-left: 1.5in;
+    padding-right: 1in;
+    padding-bottom: 1in;
+    padding-top: 1in;
+
+
+}
+
+
+
+::ng-deep 
+.ql-editor {
+    font-family: 'Courier new', Courier, monospace;
+    min-height: 820px;
+}
+
+
+::ng-deep .ql-container {
+    border: none !important;
+    font-family: 'Courier new', Courier, monospace;
+}
+  

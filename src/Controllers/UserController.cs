@@ -53,4 +53,4 @@ public class AccountsController : ControllerBase
         Response.Cookies.Append("Authentication", $"Bearer {token}", new CookieOptions() { HttpOnly = true /* Expires = new DateTimeOffset(DateTime.Now, TimeSpan.FromDays(30)*/});
         return Ok(new AuthResponseDto { IsAuthSuccessful = true, Token = token });
     }
-}
+} 

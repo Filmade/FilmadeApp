@@ -12,11 +12,12 @@ import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WorkbenchLayoutComponent } from './workbench/workbench-layout/workbench-layout.component';
 import { WorkbenchModule } from './workbench/workbench.module';
+import { ProjectLayoutComponent } from './workbench/project-layout/project-layout.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent, WorkbenchLayoutComponent
+    AppComponent, WorkbenchLayoutComponent, ProjectLayoutComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -27,7 +28,7 @@ import { WorkbenchModule } from './workbench/workbench.module';
     RouterModule.forRoot([
       { path: '', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
       { path: 'auth', loadChildren: () => import('./authentication/authentication.module').then(m => m.AuthenticationModule) },
-      { path: 'workbench', component: WorkbenchLayoutComponent, loadChildren: () => import('./workbench/workbench.module').then(m => m.WorkbenchModule) },
+      { path: 'workbench', loadChildren: () => import('./workbench/workbench.module').then(m => m.WorkbenchModule) },
 
       { path: '', redirectTo: '/home', pathMatch: 'full' },
       { path: '**', redirectTo: '/404', pathMatch: 'full'}

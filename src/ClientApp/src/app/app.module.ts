@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WorkbenchLayoutComponent } from './workbench/workbench-layout/workbench-layout.component';
 import { WorkbenchModule } from './workbench/workbench.module';
 import { ProjectLayoutComponent } from './workbench/project-layout/project-layout.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { ProjectLayoutComponent } from './workbench/project-layout/project-layou
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     MatIconModule,
     WorkbenchModule,
     RouterModule.forRoot([

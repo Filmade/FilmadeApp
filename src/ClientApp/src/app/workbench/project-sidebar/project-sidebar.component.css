@@ -1,0 +1,12 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+ 
+
+.sidebar-wrapper {
+    background-color: #212529;
+    color: aliceblue;
+}
+li > a {
+    color: aliceblue;
+    font-size: 20pt;
+    font-family: 'Righteous', cursive;
+}

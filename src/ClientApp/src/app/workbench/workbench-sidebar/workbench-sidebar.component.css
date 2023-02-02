@@ -1,0 +1,8 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+ 
+
+
+* {
+    color: red !important;
+    font-size: 300px;
+}

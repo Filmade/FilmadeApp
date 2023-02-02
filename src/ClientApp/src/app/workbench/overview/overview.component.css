@@ -1,3 +1,7 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+ 
+
+
 .project-icon {
     margin-left: auto;
     margin-right: auto;

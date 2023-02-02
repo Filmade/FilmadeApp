@@ -1,3 +1,7 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+ 
+
+
 .drawer {
     margin: 0 0 0 0;
     min-height: 100vw;

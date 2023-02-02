@@ -1,0 +1,6 @@
+.main-panel {
+    background-color: #495057;
+}
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+ 

@@ -22,11 +22,11 @@ export class ProjectBreakdownsComponent implements OnInit {
   breakDowns: Array<string> = [];
 
   breakDownTypes = [
-    "Actor",
-    "Scene",
-    "Equipment",
-    "Props",
-    "Others"
+    "Актер",
+    "Сцена",
+    "Оборудование",
+    "Реквизит",
+    "Другое"
   ]
 
   constructor() { }

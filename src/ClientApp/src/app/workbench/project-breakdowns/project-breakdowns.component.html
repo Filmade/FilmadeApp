@@ -11,7 +11,7 @@
             <div class="paper">
                 <div id="bar" [style.left]="barLeft + 'px'" [style.visibility]="barIsVisible ? 'visible' : 'hidden'"
                     [style.top]="barTop + 'px'">
-                    <h2>{{activeWord}}</h2>
+                    <h4><b>{{activeWord}}</b></h4>
                     <br />
                     <mat-radio-group (change)="handleChange($event)" aria-labelledby="example-radio-group-label" class="example-radio-group"
                         [(ngModel)]="selectedType">
